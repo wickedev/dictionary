@@ -2,10 +2,11 @@
     "calva.replConnectSequences": [
         {
             "projectType": "deps.edn",
-            "name": "dictionary",
+            "afterCLJReplJackInCode": "(user/go)",
+            "name": "Polylith REPL",
             "cljsType": "none",
             "menuSelections": {
-                "cljAliases": ["dev", "test", "+default"]
+                "cljAliases": ["dev", "test"]
             }
         }
     ]

@@ -1,13 +1,7 @@
-<img src="logo.png" width="30%" alt="Polylith" id="logo">
+# 사전
 
-The Polylith documentation can be found here:
+## 개발
 
-- The [high-level documentation](https://polylith.gitbook.io/polylith)
-- The [Polylith Tool documentation](https://github.com/polyfy/polylith)
-- The [RealWorld example app documentation](https://github.com/furkan3ayraktar/clojure-polylith-realworld-example-app)
-
-You can also get in touch with the Polylith Team on [Slack](https://clojurians.slack.com/archives/C013B7MQHJQ).
-
-<h1>dictionary</h1>
-
-<p>Add your workspace documentation here...</p>
+```sh
+clj -A:dev
+```

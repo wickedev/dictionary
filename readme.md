@@ -9,7 +9,7 @@
 
 ## 예정
 
-- components/ndic: `https://en.dict.naver.com/api3/enko/search?query=test&m=mobile&shouldSearchVlive=false&lang=ko` 응답 파싱하여 사용하기 쉬운 형태로 가공
+- components/ndic: [네이버 사전](https://en.dict.naver.com/api3/enko/search?query=test&m=mobile&shouldSearchVlive=false&lang=ko) 응답 파싱하여 사용하기 쉬운 형태로 가공
 - bases/backend: ndic 응답을 GraphQL 쿼리로 구현
 - lacinia 쿼리 구현 및 superlifter 적용, honeysql + jdbc + sqlite 캐시 구현
 - clj-kondo 린트 적용

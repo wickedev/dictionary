@@ -2,11 +2,12 @@
                                "components/ndic-parser/src"
                                "bases/backend/src"
                                "bases/backend/resources"]
-                 :extra-deps  {integrant/repl      {:mvn/version "0.3.2"}}}
-           :test        {:extra-paths ["components/ndic-parser/test"
-                                       "bases/backend/test"]}
+                 :extra-deps  {poly/api-server {:local/root "projects/backend"}
+                               integrant/repl      {:mvn/version "0.3.2"}}}
+           :test {:extra-paths ["components/ndic-parser/test"
+                                "bases/backend/test"]}
 
-           :poly        {:main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
-                         :extra-deps {polyfy/polylith {:git/url   "https://github.com/polyfy/polylith"
-                                                       :sha       "f0d38cb71e9d3f7a620a4baecb491da4aab91edd"
-                                                       :deps/root "projects/poly"}}}}}
+           :poly {:main-opts  ["-m" "polylith.clj.core.poly-cli.core"]
+                  :extra-deps {polyfy/polylith {:git/url   "https://github.com/polyfy/polylith"
+                                                :sha       "f0d38cb71e9d3f7a620a4baecb491da4aab91edd"
+                                                :deps/root "projects/poly"}}}}}

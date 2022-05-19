@@ -1,1 +1,5 @@
-{}
+{:database.sql/connection {:uri "jdbc:sqlite::memory:"}
+ :backend/handler {:db #ig/ref :database.sql/connection}
+ :ring.adapter/jetty {:port 8000
+                      :join? false
+                      :handler #ig/ref :backend/handler}}

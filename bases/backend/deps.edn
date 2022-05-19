@@ -1,4 +1,8 @@
 {:paths ["src" "resources"]
- :deps {ring/ring {:mvn/version "1.9.5"}}
+ :deps {integrant/integrant {:mvn/version "0.8.0"}
+        ring/ring {:mvn/version "1.9.5"}
+        org.slf4j/slf4j-simple {:mvn/version "1.7.30"}
+        org.clojure/java.jdbc {:mvn/version "0.7.8"}
+        org.xerial/sqlite-jdbc {:mvn/version "3.23.1"}}
  :aliases {:test {:extra-paths ["test"]
                   :extra-deps {}}}}

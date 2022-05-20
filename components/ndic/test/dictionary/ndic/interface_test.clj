@@ -4,7 +4,7 @@
             [json-path :as jq]))
 
 (deftest search-in-dict-test
-  (is (seq (->> (ndic/search-in-dict "test")
+  (is (seq (->> @(ndic/search-in-dict "test")
                 (jq/query "$..means")
                 (map :value)
                 (apply concat)

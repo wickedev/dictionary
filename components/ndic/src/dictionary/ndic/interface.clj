@@ -1,5 +1,6 @@
 (ns dictionary.ndic.interface
-  (:require [aleph.http :as http]
+  (:require [manifold.deferred :as d]
+            [aleph.http :as http]
             [byte-streams :as bs]
             [clojure.data.json :as json]
             [clojure.walk :as walk]
@@ -16,8 +17,8 @@
                 :m "mobile"
                 :shouldSearchVlive false
                 :lang "ko"})]
-    (-> @(http/get (str naver-dict-base-uri "?" query))
-        :body
-        bs/to-string
-        json/read-str
-        walk/keywordize-keys)))
+    (d/chain (http/get (str naver-dict-base-uri "?" query))
+             :body
+             bs/to-string
+             json/read-str
+             walk/keywordize-keys)))

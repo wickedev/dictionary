@@ -29,3 +29,7 @@ user=> (go)
 :initiated
 user=>
 ```
+
+## API
+
+- `curl http://localhost:8000/?word=test`

@@ -1,0 +1,177 @@
+type Mean {
+  groupId: String
+  exampleTrans: String
+  languageGroupCode: String
+  subjectGroupCode: String
+  value: String
+  groupName: String
+  exampleOri: String
+  subjectGroup: String
+  vcode: Int
+  sourceUpdate: String
+  order: Int
+  example: String
+  uuid: String
+  encode: String
+  languageGroup: String
+  handleValue: String
+}
+
+type MeansCollector {
+  partOfSpeech: String
+  partOfSpeech2: String
+  partOfSpeechCode: String
+  means: [Mean]
+}
+
+type SearchPhoneticSymbol {
+  symbolType: String
+  symbolTypeCode: String
+  symbolValue: String
+  symbolFile: String
+  symbolAccentiaImg: String
+  symbolAccentiaAudioCnt: String
+}
+
+type Item {
+  conjugate: String
+  destinationLink: String
+  videoFileCount: Int
+  expDictTypeForm: String
+  expHanjaRadicalKoreanName: String
+  meansCollector: [MeansCollector]
+  hasOrigin: Int
+  antonymWordList: [String]
+  isHighDfTerm: Int
+  expAliasEntryAlwaysList: [String]
+  expAliasGeneralAlways: String
+  expAbstract: String
+  idiomOriUrl: String
+  hasStudy: Int
+  expAliasEntrySearchAllKind: String
+  exactMatch: Boolean
+  hasExample: Int
+  expEntryComposition: String
+  pronunFileCount: Int
+  expMeaningRead: String
+  sourceDictnameOri: String
+  expAudioRead: String
+  hasImage: Int
+  expKoreanHanja: String
+  expAliasGeneralSearch: String
+  sourceDictnameKO: String
+  entryImageURLs: String
+  searchPhoneticSymbolList: [SearchPhoneticSymbol]
+  isPhoneticSymbol: Int
+  newEntry: String
+  expAliasEntryAlwaysOld: String
+  handleEntry: String
+  etcExplain: String
+  entryId: String
+  matchType: String
+  searchTraditionalChineseList: [String]
+  rank: String
+  expAliasEntrySearchList: [String]
+  gdid: String
+  isOpenDict: Int
+  idiomOri: String
+  expKoreanPron: String
+  entryLikeNumber: String
+  expSynonym: String
+  sourceDictnameLink: String
+  dictTypeMulti: String
+  destinationLinkKo: String
+  hasSource: Int
+  expAliasEntryAlways: String
+  hasIdiom: Int
+  documentQuality: Float
+  expAliasEntrySearch: String
+  searchVariantHanziList: [String]
+  languageCode: String
+  videoThumnail: String
+  priority: Int
+  expKanji: String
+  audioThumnail: String
+  expEntryCustomContent: String
+  expAliasGeneralAlwaysList: [String]
+  imageFileCount: Int
+  expOnly: String
+  exphanjaRadicalStroke: String
+  expEntry: String
+  expAntonym: String
+  dictId: String
+  vcode: String
+  expEntrySuperscript: String
+  meaningCount: Int
+  entryImageURL: String
+  sourceUpdate: String
+  expSourceBook: String
+  serviceCode: String
+  expStrokeAnimation: String
+  uuid: String
+  audioFileCount: Int
+  encode: String
+  exphanjaStroke: String
+  exphanjaRadical: String
+  expConjugationMoreURL: String
+  sourceCid: String
+  frequencyAdd: String
+  partGroupYn: String
+  dictTypeForm: String
+  pageView: String
+  dictTypeWriter: String
+  hasConjugation: Int
+  entryCommentNumber: Int
+  phoneticSymbol: String
+  similarWordList: [String]
+  expAliasEntrySearchKrKind: String
+}
+
+type Dictionary {
+  orKEquery: String
+  errataQuery: String
+  sectionType: String
+  forceQuery: String
+  total: Int
+  queryRevert: String
+  revert: String
+  items: [Item]
+  query: String
+}
+
+type SearchResultList {
+  WORD: Dictionary
+  OPEN: Dictionary
+  MEANING: Dictionary
+  EXAMPLE: Dictionary
+  VLIVE: Dictionary
+  THESAURUS: Dictionary
+}
+
+type SearchResult {
+  searchResultListMap: SearchResultList
+}
+
+type SearchMaybeK {
+  query: String
+  revert: String
+  orKEquery: String
+  forceQuery: String
+  errataQuery: String
+  compatibilityJamo: Boolean
+}
+
+type DictSearchResult {
+  searchResultMap: SearchResult
+  mode: String
+  exactMatcheEntryUrl: Boolean
+  collectionRanking: [String]
+  LAIMLog: Boolean
+  query: String
+  range: String
+  searchMaybek: SearchMaybeK
+}
+
+type Query {
+  searchInDictionary(word: String!): DictSearchResult!
+}

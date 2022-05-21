@@ -1,5 +1,5 @@
 {:database.sql/connection {:uri "jdbc:sqlite::memory:"}
- :backend/handler {:db #ig/ref :database.sql/connection}
+ :backend/app {}
  :ring.adapter/aleph {:port 8000
                       :join? false
-                      :handler #ig/ref :backend/handler}}
+                      :app #ig/ref :backend/app}}
